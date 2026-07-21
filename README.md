@@ -6,3 +6,8 @@ A program to remove advertisements from recorded cricket matches.
 2. Set init_vars.file_path, init_vars.offset, init_vars.read_till_time in main.c
 3. Compile using ```gcc -o main main.c -lsndfile```
 4. Run the executable file generated
+5. Rename your video file to in.mkv
+6. Use ffmpeg to remove ad breaks (using the generated cuts.ffconcat file) 
+   ```ffmpeg -f concat -safe 0 -i cuts.ffconcat -c copy out.mkv```
+
+
